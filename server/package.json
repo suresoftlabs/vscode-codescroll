@@ -1,0 +1,79 @@
+{
+  "name": "codescroll-engine",
+  "displayName": "CODESCROLL static analysis engine for C/C++",
+  "description": "Powerful C/C++ semantic analyzer for personal use",
+  "author": {
+    "name": "Minhyuk Kwon",
+    "email": "minhyuk@suresofttech.com"
+  },
+  "publisher": "Minhyuk Kwon",
+  "version": "1.0.0",
+  "license": "GPL3",
+  "icon": "sn.png",
+  "galleryBanner": {
+    "color": "#303f9f",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/suresoftlabs/vscode-codescroll.git"
+  },
+  "bugs": {
+    "url": "https://github.com/suresoftlabs/vscode-codescroll.git",
+    "email": "minhyuk@suresofttech.com"
+  },
+  "homepage": "https://github.com/suresoftlabs/vscode-codescroll/blob/master/README.md",
+
+  "categories": [
+    "Programming Languages",
+    "Linters"
+  ],
+  "keywords": [
+    "c",
+    "c++",
+    "lint",
+    "linter",
+    "static",
+    "analyzer",
+    "semantic",
+    "analysis",
+    "bug",
+    "bugfinder",
+    "verify"
+  ],
+
+  "private": true,
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {
+    "cross-spawn": "^6.0.5",
+    "lodash": "^4.17.10",
+    "slash": "^2.0.0",
+    "fast-glob": "^2.2.6",
+    "tmp": "^0.0.33",
+    "var-expansion": "^0.1.0",
+    "vscode-languageserver": "^4.1.3",
+    "vscode-languageserver-protocol": "^3.7.2",
+    "vscode-uri": "^1.0.3",
+    "which": "^1.3.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.0",
+    "@types/chai-as-promised": "^7.1.0",
+    "@types/mock-fs": "^3.6.30",
+    "@types/node": "^7.0.12",
+    "@types/cross-spawn": "^6.0.0",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^5.2.0",
+    "mocha-typescript": "^1.1.14",
+    "mock-fs": "^4.5.0",
+    "typescript": "^3.0.0"
+  },
+  "scripts": {
+    "installServer": "installServerIntoExtension ../client ./package.json ./tsconfig.json",
+    "compile": "installServerIntoExtension ../client ./package.json ./tsconfig.json && tsc -p .",
+    "watch": "installServerIntoExtension ../client ./package.json ./tsconfig.json && tsc -w -p ."
+  }
+}

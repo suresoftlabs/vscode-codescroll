@@ -1,0 +1,67 @@
+{
+  "name": "codescroll",
+  "displayName": "CODESCROLL static analyzer for C/C++",
+  "description": "Powerful C/C++ semantic analyzer for personal use",
+  "author": {
+    "name": "Minhyuk Kwon",
+    "email": "minhyuk@suresofttech.com"
+  },
+  "publisher": "Minhyuk Kwon",
+  "version": "1.0.0",
+  "license": "GPL3",
+  "icon": "sn.png",
+  "galleryBanner": {
+    "color": "#303f9f",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/suresoftlabs/vscode-codescroll.git"
+  },
+  "bugs": {
+    "url": "https://github.com/suresoftlabs/vscode-codescroll.git",
+    "email": "minhyuk@suresofttech.com"
+  },
+  "homepage": "https://github.com/suresoftlabs/vscode-codescroll/blob/master/README.md",
+  "engines": {
+    "vscode": "^1.25.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Linters"
+  ],
+  "keywords": [
+    "c",
+    "c++",
+    "lint",
+    "linter",
+    "static",
+    "analyzer",
+    "semantic",
+    "analysis",
+    "bug",
+    "bugfinder",
+    "verify"
+  ],
+  "scripts": {
+    "postinstall": "cd server && npm install && cd ../client && npm install && cd ..",
+    "compile": "tsc -p client/tsconfig.json && cd server && npm run installServer && cd .. && tsc -p server/tsconfig.json",
+    "compile:client": "tsc -p client/tsconfig.json",
+    "watch:client": "tsc -w -p client/tsconfig.json",
+    "compile:server": "cd server && npm run installServer && cd .. && tsc -p server/tsconfig.json",
+    "watch:server": "cd server && npm run installServer && cd .. && tsc -w -p server/tsconfig.json",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.0",
+    "@types/chai-as-promised": "^7.1.0",
+    "@types/mock-fs": "^3.6.30",
+    "@types/node": "^7.0.12",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^5.2.0",
+    "mocha-typescript": "^1.1.14",
+    "mock-fs": "^4.5.0",
+    "typescript": "^3.0.0"
+  }
+}
